@@ -1,234 +1,70 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sempeak Content Hub | Profesyonel İçerik Çözümleri</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #1d4ed8, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#1d4ed815 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px -12px rgba(29, 78, 216, 0.15);
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sempeak Content Hub | Profesyonel İçerik Çözümleri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #1d4ed8, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-pattern { background-color: #ffffff; background-image: radial-gradient(#1d4ed815 1px, transparent 1px); background-size: 40px 40px; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(29, 78, 216, 0.15); }
+        img { max-width: 100%; height: auto; }
+    </style>
 </head>
 <body class="bg-white text-slate-900">
 
-    <!-- Navigasyon -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-4">
-                    <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8">
-                    <div class="h-6 w-[1px] bg-slate-200"></div>
-                    <span class="text-[10px] font-black tracking-widest text-blue-600 uppercase">Content Hub</span>
-                </div>
-                <div class="hidden md:flex items-center gap-8 text-sm font-bold">
-                    <a href="#services" class="hover:text-blue-600 transition">Hizmetler</a>
-                    <a href="#results" class="hover:text-blue-600 transition">Başarı Hikayeleri</a>
-                    <a href="#expertise" class="hover:text-blue-600 transition">Uzmanlık</a>
-                    <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200">Bize Ulaşın</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-4">
+                    <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-6 md:h-8 w-auto">
+                    <div class="h-6 w-[1px] bg-slate-200"></div>
+                    <span class="text-[10px] font-black tracking-widest text-blue-600 uppercase">Content Hub</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-bold">
+                    <a href="#services" class="hover:text-blue-600 transition">Hizmetler</a>
+                    <a href="#results" class="hover:text-blue-600 transition">Başarılar</a>
+                    <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition shadow-lg">Bize Ulaşın</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-40 pb-24 bg-pattern relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="flex flex-col items-center text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full mb-8 border border-blue-100">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i>
-                    <span class="text-[11px] font-bold uppercase tracking-wider">Veriyle Beslenen Kreatif İçerik Gücü</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1]">
-                    Markanızın Dijital Sesini <br> <span class="gradient-text">Performansla</span> Tanımlayın.
-                </h1>
-                <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed">
-                    Sempeak Content Hub, SEO disiplinini editoryal yaratıcılıkla birleştirir. Sadece içerik üretmiyoruz; markanız için ölçülebilir organik büyüme sağlıyoruz.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#contact" class="px-10 py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-2xl shadow-slate-300">İçerik Stratejisi Alın</a>
-                    <a href="#results" class="px-10 py-5 bg-white text-slate-900 border border-slate-200 font-bold rounded-2xl hover:bg-slate-50 transition-all">Sonuçları Görün</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="pt-40 pb-24 bg-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full mb-8 border border-blue-100">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span class="text-[11px] font-bold uppercase tracking-wider">Veriyle Beslenen Kreatif İçerik Gücü</span>
+            </div>
+            <h1 class="text-4xl md:text-7xl font-extrabold mb-8 tracking-tight leading-tight">
+                Markanızın Dijital Sesini <br> <span class="gradient-text">Performansla</span> Tanımlayın.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-12">
+                Sempeak Content Hub, SEO disiplinini editoryal yaratıcılıkla birleştirir. Sadece içerik üretmiyoruz; ölçülebilir organik büyüme sağlıyoruz.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="px-10 py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all">İçerik Stratejisi Alın</a>
+            </div>
+        </div>
+    </section>
 
-    <!-- Trust Stats -->
-    <section class="py-12 border-y border-slate-100 bg-slate-50/50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <p class="text-3xl font-black text-slate-900">4,000+</p>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Yıllık İçerik Hacmi</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-black text-slate-900">50+</p>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Global Marka</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-black text-slate-900">%80+</p>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Görünürlük Artışı</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-black text-slate-900">12+</p>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Sektörel Uzmanlık</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-32">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                <div class="max-w-2xl">
-                    <h2 class="text-4xl font-extrabold mb-6 italic">Çözüm Odaklı İçerik Evreni</h2>
-                    <p class="text-slate-500 text-lg">Hangi kanalda olursanız olun, hedef kitlenizle doğru dilde konuşmanızı sağlıyoruz.</p>
-                </div>
-                <div class="hidden md:block">
-                    <i data-lucide="layers" class="w-16 h-16 text-blue-100"></i>
-                </div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-10 bg-white border border-slate-100 rounded-[3rem] card-hover shadow-sm">
-                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="search"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">SEO & Blog</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed">Arama motoru algoritmalarına uyumlu, kullanıcı niyetini karşılayan stratejik makaleler.</p>
-                </div>
-                <div class="p-10 bg-white border border-slate-100 rounded-[3rem] card-hover shadow-sm">
-                    <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="shopping-cart"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">E-Ticaret & UX</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed">Satın alma kararını hızlandıran ürün açıklamaları ve kullanıcı odaklı mikro metinler.</p>
-                </div>
-                <div class="p-10 bg-white border border-slate-100 rounded-[3rem] card-hover shadow-sm">
-                    <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-8">
-                        <i data-lucide="globe-2"></i>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">Global Yerelleştirme</h4>
-                    <p class="text-sm text-slate-500 leading-relaxed">Çok dilli pazarlarda markanızın yerel bir güç gibi algılanmasını sağlayan adaptasyonlar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Results Section (REPLACES INTERNAL TABLES) -->
-    <section id="results" class="py-32 bg-slate-900 text-white overflow-hidden relative">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10">
-            <div class="absolute top-10 left-10 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <h2 class="text-4xl font-extrabold mb-16 text-center italic">Veriyle Kanıtlanmış Başarılar</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center group">
-                    <div class="mb-8 flex justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Media_Markt_logo.svg/2560px-Media_Markt_logo.svg.png" alt="MediaMarkt" class="h-8 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500">
-                    </div>
-                    <p class="text-6xl font-black text-blue-400 mb-4">%60</p>
-                    <p class="text-sm font-bold uppercase tracking-widest text-slate-400 italic">Organik Oturum Artışı</p>
-                </div>
-                <div class="text-center group border-x border-white/10">
-                    <div class="mb-8 flex justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/1280px-Hyundai_Motor_Company_logo.svg.png" alt="Hyundai" class="h-8 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500">
-                    </div>
-                    <p class="text-6xl font-black text-blue-400 mb-4">%82</p>
-                    <p class="text-sm font-bold uppercase tracking-widest text-slate-400 italic">SEO Görünürlük Yükselişi</p>
-                </div>
-                <div class="text-center group">
-                    <div class="mb-8 flex justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Generali_Logo.svg/1280px-Generali_Logo.svg.png" alt="Generali" class="h-8 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-500">
-                    </div>
-                    <p class="text-6xl font-black text-blue-400 mb-4">%100+</p>
-                    <p class="text-sm font-bold uppercase tracking-widest text-slate-400 italic">Yeni Kelime Kazanımı</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise & Team -->
-    <section id="expertise" class="py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl font-extrabold mb-4 italic text-slate-900">Stratejik Editoryal Kadro</h2>
-                <p class="text-slate-500 max-w-xl mx-auto">İçerikleriniz rastgele değil, uzmanların denetiminden geçerek yayınlanır.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div class="text-center">
-                    <div class="w-40 h-40 bg-white rounded-[2.5rem] mx-auto mb-8 shadow-xl flex items-center justify-center border border-slate-100 overflow-hidden group">
-                         <span class="text-3xl font-black text-blue-600 group-hover:scale-110 transition-transform">FA</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Feyzan Ece Aybar</h4>
-                    <p class="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-4">Content Strategy Lead</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-40 h-40 bg-white rounded-[2.5rem] mx-auto mb-8 shadow-xl flex items-center justify-center border border-slate-100 overflow-hidden group">
-                         <span class="text-3xl font-black text-slate-400 group-hover:scale-110 transition-transform">NK</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Nizam Ülkü Kabataş</h4>
-                    <p class="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-4">Senior Editor</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-40 h-40 bg-white rounded-[2.5rem] mx-auto mb-8 shadow-xl flex items-center justify-center border border-slate-100 overflow-hidden group">
-                         <span class="text-3xl font-black text-blue-300 group-hover:scale-110 transition-transform">BG</span>
-                    </div>
-                    <h4 class="text-xl font-bold mb-2">Başak Pırıl Gökayaz</h4>
-                    <p class="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] mb-4">Content Specialist</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="contact" class="py-24">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="bg-blue-600 p-16 rounded-[4rem] text-white text-center shadow-2xl shadow-blue-200 relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-5xl font-black mb-8 italic">Birlikte Büyümeye Başlayalım</h2>
-                    <p class="text-blue-100 text-lg mb-12 max-w-xl mx-auto">Markanızın ihtiyacı olan içerik stratejisini belirlemek için uzman ekibimizle bir toplantı planlayın.</p>
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <button class="px-12 py-5 bg-white text-blue-600 font-black rounded-2xl hover:scale-105 transition-all shadow-xl">Hemen Teklif Al</button>
-                        <button class="px-12 py-5 bg-blue-700 text-white font-black rounded-2xl hover:bg-blue-800 transition-all border border-blue-400/30">Vaka Analizlerini İndir</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-slate-100 text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-6 mx-auto mb-8 opacity-40">
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.5em]">Sempeak — Content Hub Portalı 2026</p>
-        </div>
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+    <section id="results" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold mb-16 text-center italic">Başarı Hikayeleri</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Media_Markt_logo.svg/512px-Media_Markt_logo.svg.png" class="h-8 mx-auto mb-6 brightness-0 invert object-contain" alt="MediaMarkt">
+                    <p class="text-5xl font-black text-blue-400">%60</p>
+                    <p class="text-slate-400 text-sm mt-2">Organik Oturum Artışı</p>
+                </div>
+                <div class="text-center border-y md:border-y-0 md:border-x border-white/10 py-10 md:py-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/512px-Hyundai_Motor_Company_logo.svg.png" class="h-8 mx-auto mb-6 brightness-0 invert object-contain" alt="Hyundai">
+                    <p class="text-5xl font-black text-blue-400">%82</p>
+                    <p class="text-slate-400 text-sm mt-2">SEO Görünürlüğü</p>
+                </div>
+                <div class="text-center">
