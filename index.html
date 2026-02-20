@@ -63,43 +63,58 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-56 pb-32 px-6">
-        <div class="hero-blob top-0 left-0"></div>
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <h1 class="reveal text-6xl md:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tighter">
-                Dijital Sesinizi <br> <span class="gradient-text">Veriyle</span> Yönetin.
-            </h1>
-            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-10 text-lg">
-                Sempeak Content Hub ile SEO uyumlu, dönüşüm odaklı ve yapay zeka destekli içerik stratejileriyle tanışın.
-            </p>
+   <div class="reveal max-w-5xl mx-auto mt-12">
+    <div class="bg-white/80 backdrop-blur-xl p-3 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50">
+        <form id="contactForm" class="flex flex-col lg:flex-row items-center gap-3">
+            
+            <div class="relative w-full lg:w-1/4 group">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <input type="text" id="userName" placeholder="Adınız" required
+                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium">
+            </div>
 
-          <div class="reveal max-w-4xl mx-auto bg-white rounded-[2rem] shadow-2xl border border-slate-100 p-2 overflow-hidden">
-    <form id="contactForm" class="flex flex-col md:flex-row items-center gap-2">
-        <input type="text" id="userName" placeholder="Adınız" required
-            class="w-full md:w-1/4 px-5 py-4 rounded-2xl text-slate-600 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-        
-        <select id="serviceType" class="w-full md:w-1/4 px-5 py-4 rounded-2xl text-slate-500 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all cursor-pointer">
-            <option value="seo">SEO İçerik</option>
-            <option value="blog">Blog Yönetimi</option>
-            <option value="copy">Reklam Yazarlığı</option>
-            <option value="other">Diğer</option>
-        </select>
+            <div class="relative w-full lg:w-1/4 group">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors pointer-events-none">
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <select id="serviceType" 
+                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium appearance-none cursor-pointer">
+                    <option value="" disabled selected>Hizmet Seçin</option>
+                    <option value="seo">SEO İçerik Stratejisi</option>
+                    <option value="blog">Blog Yönetimi</option>
+                    <option value="copy">Creative Copywriting</option>
+                </select>
+            </div>
 
-        <input type="text" id="userNote" placeholder="Ne istersiniz? (Örn: 10 adet blog)" required
-            class="flex-1 w-full px-5 py-4 rounded-2xl text-slate-600 bg-slate-50 focus:bg-white focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+            <div class="relative flex-1 w-full group">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                </div>
+                <input type="text" id="userNote" placeholder="Kısaca ihtiyacınız nedir?" required
+                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium">
+            </div>
 
-        <button type="submit" class="w-full md:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 hover:shadow-lg transition-all flex items-center justify-center gap-2 group">
-            <span id="btnText">Gönder</span>
-            <i data-lucide="send" id="btnIcon" class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-        </button>
-    </form>
-</div>
-<div id="successMsg" class="mt-6 hidden">
-    <div class="flex items-center justify-center gap-2 text-green-600 font-bold animate-bounce">
-        <i data-lucide="check-circle" class="w-6 h-6"></i>
-        <span>Talebiniz alındı! Sizinle en kısa sürede iletişime geçeceğiz.</span>
+            <button type="submit" id="submitBtn" class="w-full lg:w-auto px-10 py-5 bg-slate-900 text-white font-bold rounded-3xl hover:bg-blue-600 transform hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl">
+                <span id="btnText">Hemen Başlayalım</span>
+                <i data-lucide="sparkles" id="btnIcon" class="w-5 h-5"></i>
+            </button>
+        </form>
     </div>
-</div>  
+
+    <div id="successMsg" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[200] hidden">
+        <div class="bg-slate-900 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce">
+            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <i data-lucide="check" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+                <p class="font-bold text-sm">Mesajınız Alındı!</p>
+                <p class="text-xs text-slate-400">Ekibimiz size dönüş yapacak.</p>
+            </div>
+        </div>
+    </div>
+</div>
         
     <!-- Stat Counter Section -->
     <section class="py-20 bg-blue-600 text-white">
