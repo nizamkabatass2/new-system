@@ -3,126 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sempeak Content Hub | Performans Odaklı İçerik Stratejisi</title>
+    <title>Sempeak Content Hub | Dinamik İçerik Stratejisi</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; padding: 0; overflow-x: hidden; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(90deg, #1d4ed8, #60a5fa, #1d4ed8); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
         @keyframes shine { to { background-position: 200% center; } }
-        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
-        .hero-blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; filter: blur(60px); z-index: -1; animation: float 20s infinite alternate; }
-        @keyframes float { 0% { transform: translate(-10%, -10%) scale(1); } 100% { transform: translate(20%, 20%) scale(1.2); } }
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: all 0.3s ease; }
+        .glass-nav.scrolled { padding: 0.75rem 1rem; background: rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .hero-blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; filter: blur(60px); z-index: -1; animation: float 20s infinite alternate; }
+        @keyframes float { 0% { transform: translate(-10%, -10%) scale(1); } 100% { transform: translate(20%, 20%) scale(1.1); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(226, 232, 240, 0.5); }
-        .service-card:hover { transform: translateY(-12px) scale(1.02); border-color: #3b82f6; box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15); }
-        .process-step::after { content: ''; position: absolute; top: 24px; right: -50%; width: 100%; height: 2px; background: repeating-linear-gradient(to right, #e2e8f0 0, #e2e8f0 5px, transparent 5px, transparent 10px); z-index: 0; }
-        @media (max-width: 768px) { .process-step::after { display: none; } }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 200px; }
+        .accordion-item.active i { transform: rotate(180deg); }
     </style>
 </head>
-<body class="bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-700">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
-    <nav class="fixed w-full z-[100] glass-nav border-b border-slate-100 p-4 transition-all duration-300" id="navbar">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[100] glass-nav border-b border-slate-100 p-4" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8 group-hover:scale-105 transition-transform">
-                <div class="h-6 w-[1px] bg-slate-200"></div>
-                <span class="text-blue-600 font-extrabold text-[11px] uppercase tracking-widest">Content Hub</span>
+                <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8">
+                <span class="text-blue-600 font-extrabold text-[11px] uppercase tracking-widest border-l pl-3 border-slate-200">Content Hub</span>
             </a>
+
             <div class="hidden md:flex gap-10 items-center text-[13px] font-bold uppercase tracking-tight text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition-colors">Ana Sayfa</a>
+                <a href="index.html" class="hover:text-blue-600">Ana Sayfa</a>
                 
+                <!-- Hakkımızda Dropdown -->
                 <div class="relative group cursor-pointer">
-                    <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
+                    <div class="flex items-center gap-1 hover:text-blue-600">
                         <span>Hakkımızda</span>
-                        <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:rotate-180"></i>
                     </div>
-                    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] p-4">
+                    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4 translate-y-2 group-hover:translate-y-0">
                         <div class="grid gap-2">
-                            <a href="hakkimizda.html#editor" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
+                            <a href="hakkimizda.html#editor" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
                                 <span class="text-xl">✍️</span>
-                                <div><div class="text-slate-900 font-bold capitalize text-left">İçerik Editörü</div><div class="text-[10px] text-slate-400 normal-case text-left">Ekibimizle Tanışın</div></div>
+                                <div><div class="text-slate-900 font-bold capitalize">İçerik Editörü</div><div class="text-[10px] text-slate-400 normal-case">Ekibimiz</div></div>
                             </a>
-                            <a href="hakkimizda.html#yazar" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
+                            <a href="hakkimizda.html#yazar" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
                                 <span class="text-xl">✒️</span>
-                                <div><div class="text-slate-900 font-bold capitalize text-left">İçerik Yazarı</div><div class="text-[10px] text-slate-400 normal-case text-left">Yaratıcı Kadromuz</div></div>
-                            </a>
-                            <a href="hakkimizda.html#basari" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                                <span class="text-xl">🏆</span>
-                                <div><div class="text-slate-900 font-bold capitalize text-left">Başarı Hikayelerimiz</div><div class="text-[10px] text-slate-400 normal-case text-left">Neler Başardık?</div></div>
+                                <div><div class="text-slate-900 font-bold capitalize">İçerik Yazarı</div><div class="text-[10px] text-slate-400 normal-case">Kadromuz</div></div>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <a href="hizmetlerimiz.html" class="hover:text-blue-600 transition-colors">Hizmetler</a>
-
-                <div class="relative group cursor-pointer">
-                    <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
-                        <span>Araçlar</span>
-                        <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </div>
-                    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] p-4">
-                        <div class="grid gap-2">
-                            <a href="araclar.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                                <span class="text-xl">📊</span>
-                                <div><div class="text-slate-900 font-bold capitalize text-left">Kelime Sayıcı</div><div class="text-[10px] text-slate-400 normal-case text-left">Hızlı Analiz</div></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="surec.html" class="hover:text-blue-600 transition-colors">Süreç</a>
-                <a href="iletisim.html" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:shadow-blue-400 transition-all">Teklif Alın</a>
+                <a href="hizmetlerimiz.html" class="hover:text-blue-600">Hizmetler</a>
+                <a href="araclar.html" class="hover:text-blue-600">Araçlar</a>
+                <a href="iletisim.html" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">Teklif Alın</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-56 pb-32 px-6 overflow-hidden">
-        <div class="hero-blob top-[-10%] left-[-5%]"></div>
-        <div class="hero-blob bottom-[-10%] right-[-5%] bg-blue-100 opacity-50"></div>
+    <!-- Hero Section -->
+    <section class="relative pt-56 pb-32 px-6">
+        <div class="hero-blob top-0 left-0"></div>
         <div class="max-w-6xl mx-auto text-center relative z-10">
-            <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold uppercase tracking-widest mb-8 border border-blue-100">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-                </span>
-                Yapay Zeka Destekli SEO Dönemi Başladı
-            </div>
-            <h1 class="reveal text-6xl md:text-8xl font-extrabold mb-8 leading-[1] tracking-tighter text-slate-900">
+            <h1 class="reveal text-6xl md:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tighter">
                 Dijital Sesinizi <br> <span class="gradient-text">Veriyle</span> Yönetin.
             </h1>
-            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed font-medium">
-                Sempeak Content Hub; sadece içerik üretmez, markanızı arama motorlarının ve kullanıcıların favorisi yapacak performans stratejileri kurgular.
+            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-10 text-lg">
+                Sempeak Content Hub ile SEO uyumlu, dönüşüm odaklı ve yapay zeka destekli içerik stratejileriyle tanışın.
             </p>
-            <div class="reveal flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#contact" class="group px-10 py-5 bg-slate-900 text-white font-bold rounded-2xl shadow-2xl hover:bg-blue-600 transition-all flex items-center gap-3">
-                    Analiz Talep Et <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
-                </a>
+
+            <!-- Dinamik Analiz Formu -->
+            <div class="reveal max-w-2xl mx-auto flex flex-col sm:flex-row gap-3 p-2 bg-white rounded-3xl shadow-2xl border border-slate-100">
+                <input type="text" id="siteUrl" placeholder="Web sitenizin adresini yazın..." class="flex-1 px-6 py-4 rounded-2xl text-slate-600 outline-none">
+                <button onclick="startAnalysis()" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
+                    <span>Analizi Başlat</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div id="analysisMsg" class="mt-4 text-blue-600 font-bold hidden">Analiz simüle ediliyor...</div>
+        </div>
+    </section>
+
+    <!-- Stat Counter Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div>
+                <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="500">0</div>
+                <div class="text-blue-100 text-sm font-bold uppercase tracking-widest">Proje</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="20">0</div>
+                <div class="text-blue-100 text-sm font-bold uppercase tracking-widest">Dil Seçeneği</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="300">0</div>
+                <div class="text-blue-100 text-sm font-bold uppercase tracking-widest">Trafik Artışı %</div>
+            </div>
+            <div>
+                <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="15">0</div>
+                <div class="text-blue-100 text-sm font-bold uppercase tracking-widest">Yıllık Deneyim</div>
             </div>
         </div>
     </section>
 
-    <section class="py-12 border-y border-slate-50 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 hover:opacity-100 transition-opacity duration-700">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Media_Markt_logo.svg/512px-Media_Markt_logo.svg.png" class="h-5 object-contain" alt="MediaMarkt">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/512px-Hyundai_Motor_Company_logo.svg.png" class="h-6 object-contain" alt="Hyundai">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Generali_Logo.svg/512px-Generali_Logo.svg.png" class="h-6 object-contain" alt="Generali">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Axa_Logo.svg/512px-Axa_Logo.svg.png" class="h-6 object-contain" alt="Axa">
+    <!-- FAQ / Accordion Section -->
+    <section class="py-32 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-extrabold mb-4">Sıkça Sorulan <span class="text-blue-600">Sorular</span></h2>
+                <p class="text-slate-500">İçerik stratejiniz hakkında bilmeniz gerekenler.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="accordion-item border border-slate-100 rounded-2xl p-6 cursor-pointer hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg">İçerik üretim süreci ne kadar sürer?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="pt-4 text-slate-500">Strateji onayından sonra ilk içerikler genellikle 5 iş günü içerisinde teslim edilir.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item border border-slate-100 rounded-2xl p-6 cursor-pointer hover:bg-slate-50 transition-colors" onclick="toggleAccordion(this)">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg">Hangi dillerde içerik üretiyorsunuz?</h4>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="pt-4 text-slate-500">Başta İngilizce, Almanca ve Fransızca olmak üzere 20'den fazla dilde ana dil yetkinliğinde içerik üretiyoruz.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="process" class="py-32 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Başarı Tesadüf <span class="text-blue-600">Değildir</span></h2>
-                <p class="text-slate-500 max-w-xl mx-auto">4 adımda markanızı dijitalin zirvesine taşıyoruz.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-                <div class="reveal process-step relative text-center z-10">
-                    <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 font-black text-xl border border-slate-100 relative z-10">1</div>
-                    <h4 class="font-bold
+    <script>
+        lucide.createIcons();
+
+        // Navbar Scroll Efekti
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Sayı Sayacı Fonksiyonu
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const speed = target / 100;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + speed);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + (target === 300 ? '%' : '+');
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Accordion Fonksiyonu
+        function toggleAccordion(element) {
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(item => {
+                if (item !== element) item.classList.remove('active');
+            });
+            element.classList.toggle('active');
+        }
+
+        // Analiz Simülasyonu
+        function startAnalysis() {
+            const url = document.getElementById('siteUrl').value;
+            if (!url) return alert("Lütfen bir URL girin!");
+            const msg = document.getElementById('analysisMsg');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.innerText = "Veriler çekiliyor...";
+                setTimeout(() => {
+                    msg.innerText = "SEO skorunuz hesaplanıyor...";
+                    setTimeout(() => {
+                        alert(url + " için raporunuz hazır! İletişim sayfasından detayları alabilirsiniz.");
+                        msg.classList.add('hidden');
+                    }, 1500);
+                }, 1500);
+            }, 1000);
+        }
+
+        // Reveal ve Counter Tetikleyici
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) el.classList.add("active");
+            });
+            
+            // Sayaçları başlat (Sadece bir kez)
+            const stats = document.querySelector('.counter');
+            if(stats.getBoundingClientRect().top < window.innerHeight) {
+                if(!window.countersStarted) {
+                    startCounters();
+                    window.countersStarted = true;
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal;
+    </script>
+</body>
+</html>
