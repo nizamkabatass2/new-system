@@ -8,442 +8,79 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden; 
-            scroll-behavior: smooth;
-        }
-        
-        .gradient-text { 
-            background: linear-gradient(90deg, #1d4ed8, #60a5fa, #1d4ed8); 
-            background-size: 200% auto;
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-        }
-
-        .hero-blob {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: -1;
-            animation: float 20s infinite alternate;
-        }
-
-        @keyframes float {
-            0% { transform: translate(-10%, -10%) scale(1); }
-            100% { transform: translate(20%, 20%) scale(1.2); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .service-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(226, 232, 240, 0.5);
-        }
-
-        .service-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: #3b82f6;
-            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
-        }
-
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: repeating-linear-gradient(to right, #e2e8f0 0, #e2e8f0 5px, transparent 5px, transparent 10px);
-            z-index: 0;
-        }
-
-        @media (max-width: 768px) {
-            .process-step::after { display: none; }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #1d4ed8, #60a5fa, #1d4ed8); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-700">
+<body class="bg-white text-slate-900">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-[100] glass-nav border-b border-slate-100 p-4 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8 group-hover:scale-105 transition-transform">
-                <div class="h-6 w-[1px] bg-slate-200"></div>
-                <span class="text-blue-600 font-extrabold text-[11px] uppercase tracking-widest">Content Hub</span>
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8">
+                <span class="text-blue-600 font-extrabold text-[11px] uppercase tracking-widest border-l pl-3 border-slate-200">Content Hub</span>
             </a>
-           <div class="hidden md:flex gap-10 items-center text-[13px] font-bold uppercase tracking-tight text-slate-600">
-    <a href="index.html" class="hover:text-blue-600 transition-colors">Ana Sayfa</a>
-    
-   <div class="grid gap-2">
-    <a href="hakkimizda.html#editor" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-        <span class="text-xl">✍️</span>
-        <div>
-            <div class="text-slate-900 font-bold capitalize text-left">İçerik Editörü</div>
-            <div class="text-[10px] text-slate-400 normal-case text-left">Ekibimizle Tanışın</div>
-        </div>
-    </a>
 
-    <a href="hakkimizda.html#yazar" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-        <span class="text-xl">✒️</span>
-        <div>
-            <div class="text-slate-900 font-bold capitalize text-left">İçerik Yazarı</div>
-            <div class="text-[10px] text-slate-400 normal-case text-left">Yaratıcı Kadromuz</div>
-        </div>
-    </a>
-
-    <a href="hakkimizda.html#basari" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-        <span class="text-xl">🏆</span>
-        <div>
-            <div class="text-slate-900 font-bold capitalize text-left">Başarı Hikayelerimiz</div>
-            <div class="text-[10px] text-slate-400 normal-case text-left">Neler Başardık?</div>
-        </div>
-    </a>
-</div>
-
-    <div class="relative group cursor-pointer">
-        <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
-            <a href="hizmetlerimiz.html">Hizmetler</a>
-            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-        </div>
-        <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] p-4">
-            <div class="grid gap-2">
-                <a href="hizmetlerimiz.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                    <span class="text-xl">📱</span>
-                    <div>
-                        <div class="text-slate-900 font-bold capitalize text-left">Sosyal Medya</div>
-                        <div class="text-[10px] text-slate-400 normal-case text-left">İçerik Yönetimi</div>
+            <div class="hidden md:flex gap-10 items-center text-[13px] font-bold uppercase tracking-tight text-slate-600">
+                <a href="index.html" class="hover:text-blue-600 transition-colors">Ana Sayfa</a>
+                
+                <div class="relative group cursor-pointer">
+                    <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
+                        <span>Hakkımızda</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-hover:rotate-180 transition-transform"></i>
                     </div>
-                </a>
-                <a href="hizmetlerimiz.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                    <span class="text-xl">🚀</span>
-                    <div>
-                        <div class="text-slate-900 font-bold capitalize text-left">Landing Page</div>
-                        <div class="text-[10px] text-slate-400 normal-case text-left">Dönüşüm Odaklı</div>
+                    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <div class="grid gap-2">
+                            <a href="hakkimizda.html#editor" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
+                                <span class="text-xl">✍️</span>
+                                <div><div class="text-slate-900 capitalize">İçerik Editörü</div><div class="text-[10px] text-slate-400 normal-case">Ekibimizle Tanışın</div></div>
+                            </a>
+                            <a href="hakkimizda.html#yazar" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
+                                <span class="text-xl">✒️</span>
+                                <div><div class="text-slate-900 capitalize">İçerik Yazarı</div><div class="text-[10px] text-slate-400 normal-case">Yaratıcı Kadromuz</div></div>
+                            </a>
+                            <a href="hakkimizda.html#basari" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
+                                <span class="text-xl">🏆</span>
+                                <div><div class="text-slate-900 capitalize">Başarı Hikayeleri</div><div class="text-[10px] text-slate-400 normal-case">Neler Başardık?</div></div>
+                            </a>
+                        </div>
                     </div>
-                </a>
                 </div>
-        </div>
-    </div>
-<div class="relative group cursor-pointer">
-    <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
-        <a href="araclar.html">Araçlar</a>
-        <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-    </div>
-    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100] p-4">
-        <div class="grid gap-2">
-            <a href="araclar.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                <span class="text-xl">📊</span>
-                <div>
-                    <div class="text-slate-900 font-bold capitalize text-left">Kelime Sayıcı</div>
-                    <div class="text-[10px] text-slate-400 normal-case text-left">Hızlı Metin Analizi</div>
+
+                <a href="hizmetlerimiz.html" class="hover:text-blue-600">Hizmetler</a>
+
+                <div class="relative group cursor-pointer">
+                    <div class="flex items-center gap-1 hover:text-blue-600 transition-colors">
+                        <span>Araçlar</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-hover:rotate-180 transition-transform"></i>
+                    </div>
+                    <div class="absolute left-0 mt-2 w-64 bg-white border border-slate-100 shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
+                        <div class="grid gap-2">
+                            <a href="araclar.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl">
+                                <span class="text-xl">📊</span>
+                                <div><div class="text-slate-900 capitalize">Kelime Sayıcı</div><div class="text-[10px] text-slate-400 normal-case">Hızlı Analiz</div></div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </a>
-            <a href="araclar.html" class="flex items-center gap-3 p-3 hover:bg-blue-50 rounded-xl transition-colors">
-                <span class="text-xl">🔍</span>
-                <div>
-                    <div class="text-slate-900 font-bold capitalize text-left">SEO Analiz</div>
-                    <div class="text-[10px] text-slate-400 normal-case text-left">Sitenizi Test Edin</div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-    <a href="surec.html" class="hover:text-blue-600 transition-colors">Süreç</a>
-    <a href="iletisim.html" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:shadow-blue-400 transition-all">Teklif Alın</a>
-</div>
-            <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-slate-900">
-                <i data-lucide="menu"></i>
-            </button>
+
+                <a href="surec.html" class="hover:text-blue-600">Süreç</a>
+                <a href="iletisim.html" class="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all">Teklif Alın</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-56 pb-32 px-6 overflow-hidden">
-        <div class="hero-blob top-[-10%] left-[-5%]"></div>
-        <div class="hero-blob bottom-[-10%] right-[-5%] bg-blue-100 opacity-50"></div>
-        
-        <div class="max-w-6xl mx-auto text-center relative z-10">
-            <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold uppercase tracking-widest mb-8 border border-blue-100">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
-                </span>
-                Yapay Zeka Destekli SEO Dönemi Başladı
-            </div>
-            <h1 class="reveal text-6xl md:text-8xl font-extrabold mb-8 leading-[1] tracking-tighter text-slate-900">
+    <section class="pt-56 pb-32 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="reveal text-6xl md:text-8xl font-extrabold mb-8 leading-[1] tracking-tighter">
                 Dijital Sesinizi <br> <span class="gradient-text">Veriyle</span> Yönetin.
             </h1>
-            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-12 text-lg md:text-xl leading-relaxed font-medium">
-                Sempeak Content Hub; sadece içerik üretmez, markanızı arama motorlarının ve kullanıcıların favorisi yapacak performans stratejileri kurgular.
+            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-12 text-lg">
+                Sempeak Content Hub; markanızı arama motorlarının favorisi yapacak performans stratejileri kurgular.
             </p>
-            <div class="reveal flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#contact" class="group px-10 py-5 bg-slate-900 text-white font-bold rounded-2xl shadow-2xl hover:bg-blue-600 transition-all flex items-center gap-3">
-                    Analiz Talep Et <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
-                </a>
-                <div class="flex -space-x-3 overflow-hidden">
-                    <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Referans 1">
-                    <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Referans 2">
-                    <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Referans 3">
-                    <div class="flex items-center justify-center h-10 w-10 rounded-full ring-2 ring-white bg-slate-100 text-[10px] font-bold">+500</div>
-                </div>
-            </div>
         </div>
     </section>
-
-    <!-- Trusted By -->
-    <section class="py-12 border-y border-slate-50 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 hover:opacity-100 transition-opacity duration-700">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Media_Markt_logo.svg/512px-Media_Markt_logo.svg.png" class="h-5 object-contain" alt="MediaMarkt">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyundai_Motor_Company_logo.svg/512px-Hyundai_Motor_Company_logo.svg.png" class="h-6 object-contain" alt="Hyundai">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Generali_Logo.svg/512px-Generali_Logo.svg.png" class="h-6 object-contain" alt="Generali">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Axa_Logo.svg/512px-Axa_Logo.svg.png" class="h-6 object-contain" alt="Axa">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_2014_logo_detail.svg/512px-Visa_2014_logo_detail.svg.png" class="h-4 object-contain" alt="Visa">
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="py-32 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Başarı Tesadüf <span class="text-blue-600">Değildir</span></h2>
-                <p class="text-slate-500 max-w-xl mx-auto">4 adımda markanızı dijitalin zirvesine taşıyoruz.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-                <div class="reveal process-step relative text-center z-10">
-                    <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 font-black text-xl border border-slate-100 relative z-10">1</div>
-                    <h4 class="font-bold text-lg mb-2">Analiz & Audit</h4>
-                    <p class="text-slate-500 text-sm">Mevcut durumun ve rakiplerin derinlemesine incelenmesi.</p>
-                </div>
-                <div class="reveal process-step relative text-center z-10" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 font-black text-xl border border-slate-100 relative z-10">2</div>
-                    <h4 class="font-bold text-lg mb-2">Strateji Geliştirme</h4>
-                    <p class="text-slate-500 text-sm">Hedef kitleye ve SEO verilerine dayalı takvim planı.</p>
-                </div>
-                <div class="reveal process-step relative text-center z-10" style="transition-delay: 400ms;">
-                    <div class="w-14 h-14 bg-white shadow-xl rounded-2xl flex items-center justify-center mx-auto mb-6 text-blue-600 font-black text-xl border border-slate-100 relative z-10">3</div>
-                    <h4 class="font-bold text-lg mb-2">Kreatif Üretim</h4>
-                    <p class="text-slate-500 text-sm">Uzman yazarlarımız tarafından hazırlanan özgün içerikler.</p>
-                </div>
-                <div class="reveal relative text-center z-10" style="transition-delay: 600ms;">
-                    <div class="w-14 h-14 bg-blue-600 shadow-xl shadow-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white font-black text-xl relative z-10">4</div>
-                    <h4 class="font-bold text-lg mb-2 text-blue-600">Ölçümleme & ROI</h4>
-                    <p class="text-slate-500 text-sm">Sonuçların takibi ve sürekli optimizasyon döngüsü.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 reveal">
-                <div class="max-w-2xl">
-                    <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Neler Yapıyoruz?</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tighter text-slate-900">Markanız İçin <span class="text-blue-600 underline decoration-blue-100 underline-offset-8">Akıllı Çözümler</span></h2>
-                </div>
-                <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 cursor-pointer transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></div>
-                    <div class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 cursor-pointer transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="reveal service-card bg-white p-10 rounded-[2.5rem] group">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i data-lucide="bar-chart-big" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl mb-4 group-hover:text-blue-600 transition-colors">SEO & Analytics</h3>
-                    <p class="text-slate-500 leading-relaxed mb-8">Sadece trafik değil, doğru trafik. Veri ambarımızdan gelen insights ile nokta atışı kelime stratejileri.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-4 transition-all">Detayları Gör <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="reveal service-card bg-white p-10 rounded-[2.5rem] group" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i data-lucide="rocket" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl mb-4 group-hover:text-blue-600 transition-colors">Growth Content</h3>
-                    <p class="text-slate-500 leading-relaxed mb-8">Dönüşüm hunisini (Funnel) besleyen, kullanıcının karar verme sürecini hızlandıran ikna edici içerikler.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-4 transition-all">Detayları Gör <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="reveal service-card bg-white p-10 rounded-[2.5rem] group" style="transition-delay: 400ms;">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i data-lucide="globe" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-extrabold text-2xl mb-4 group-hover:text-blue-600 transition-colors">Global Expansion</h3>
-                    <p class="text-slate-500 leading-relaxed mb-8">Dünyaya açılırken yanınızdayız. 20+ dilde native seviyede içerik üretimi ve çok dilli SEO yönetimi.</p>
-                    <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-4 transition-all">Detayları Gör <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA & Contact -->
-    <section id="contact" class="py-24 px-6 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="bg-slate-900 rounded-[3rem] p-8 md:p-20 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.1),transparent_50%)]"></div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
-                    <div class="reveal">
-                        <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tighter">İçerikle <span class="text-blue-500">Büyümeye</span> <br> Hazır mısınız?</h2>
-                        <p class="text-slate-400 text-lg mb-12">Hemen formu doldurun, uzman ekibimiz markanız için ücretsiz bir ön analiz raporu hazırlasın.</p>
-                        
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <h5 class="text-white font-bold mb-2 text-2xl">500+</h5>
-                                <p class="text-slate-500 text-xs uppercase font-bold tracking-widest">Aktif Partner</p>
-                            </div>
-                            <div>
-                                <h5 class="text-white font-bold mb-2 text-2xl">12M+</h5>
-                                <p class="text-slate-500 text-xs uppercase font-bold tracking-widest">Yıllık Kelime Üretimi</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reveal bg-white p-10 rounded-[2rem]" style="transition-delay: 200ms;">
-                        <form onsubmit="event.preventDefault();" class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Ad Soyad</label>
-                                    <input type="text" placeholder="John Doe" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                                </div>
-                                <div>
-                                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Şirket E-Postası</label>
-                                    <input type="email" placeholder="john@company.com" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">İhtiyacınız Olan Hizmet</label>
-                                <select class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all appearance-none cursor-pointer">
-                                    <option>SEO Odaklı İçerik Paketleri</option>
-                                    <option>Kreatif Copywriting & Kampanya</option>
-                                    <option>Uçtan Uca İçerik Yönetimi</option>
-                                    <option>Lokalizasyon</option>
-                                </select>
-                            </div>
-                            <button class="w-full py-5 bg-blue-600 text-white font-extrabold rounded-2xl shadow-xl shadow-blue-100 hover:shadow-blue-300 hover:bg-blue-700 transition-all flex items-center justify-center gap-3">
-                                Analizi Başlat <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="pt-24 pb-12 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-                <div class="max-w-xs">
-                    <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8 mb-6">
-                    <p class="text-slate-500 text-sm leading-relaxed">Performans odaklı içerik stratejileriyle markaların dijital görünürlüğünü sürdürülebilir kılıyoruz.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
-                    <div>
-                        <h6 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Hub</h6>
-                        <ul class="space-y-4 text-sm text-slate-500">
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">Hakkımızda</a></li>
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">Vaka Analizleri</a></li>
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">Kariyer</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h6 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Hizmetler</h6>
-                        <ul class="space-y-4 text-sm text-slate-500">
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">E-Ticaret SEO</a></li>
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">Blog Yönetimi</a></li>
-                            <li><a href="#" class="hover:text-blue-600 transition-colors">Ürün Açıklaması</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-span-2 md:col-span-1">
-                        <h6 class="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Bizi Takip Edin</h6>
-                        <div class="flex gap-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Sempeak Content Hub. Crafted with Precision.</p>
-                <div class="flex gap-8 text-[11px] font-bold text-slate-400 uppercase tracking-widest">
-                    <a href="#" class="hover:text-slate-900">Gizlilik Politikası</a>
-                    <a href="#" class="hover:text-slate-900">KVKK</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Lucide İkonlarını Başlat
-        lucide.createIcons();
-
-        // Scroll Reveal Efekti
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-
-        window.addEventListener("scroll", reveal);
-        // İlk yüklemede çalıştır
-        window.onload = reveal;
-
-        // Navbar Değişimi
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('py-2', 'shadow-xl', 'shadow-slate-100/50');
-                navbar.classList.remove('py-4');
-            } else {
-                navbar.classList.remove('py-2', 'shadow-xl', 'shadow-slate-100/50');
-                navbar.classList.add('py-4');
-            }
-        });
-    </script>
-</body>
-</html>
