@@ -73,59 +73,34 @@
                 Sempeak Content Hub ile SEO uyumlu, dönüşüm odaklı ve yapay zeka destekli içerik stratejileriyle tanışın.
             </p>
 
-         <div class="reveal max-w-5xl mx-auto mt-12">
-    <div class="bg-white/80 backdrop-blur-xl p-3 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50">
-        <form id="contactForm" class="flex flex-col lg:flex-row items-center gap-3">
-            
-            <div class="relative w-full lg:w-1/4 group">
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">
-                    <i data-lucide="user" class="w-5 h-5"></i>
-                </div>
-                <input type="text" id="userName" placeholder="Adınız" required
-                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium">
-            </div>
-
-            <div class="relative w-full lg:w-1/4 group">
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors pointer-events-none">
-                    <i data-lucide="layers" class="w-5 h-5"></i>
-                </div>
-                <select id="serviceType" 
-                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium appearance-none cursor-pointer">
-                    <option value="" disabled selected>Hizmet Seçin</option>
-                    <option value="seo">SEO İçerik Stratejisi</option>
-                    <option value="blog">Blog Yönetimi</option>
-                    <option value="copy">Creative Copywriting</option>
-                </select>
-            </div>
-
-            <div class="relative flex-1 w-full group">
-                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-600 transition-colors">
-                    <i data-lucide="message-square" class="w-5 h-5"></i>
-                </div>
-                <input type="text" id="userNote" placeholder="Kısaca ihtiyacınız nedir?" required
-                    class="w-full pl-12 pr-4 py-5 rounded-3xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-slate-700 font-medium">
-            </div>
-
-            <button type="submit" id="submitBtn" class="w-full lg:w-auto px-10 py-5 bg-slate-900 text-white font-bold rounded-3xl hover:bg-blue-600 transform hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl">
-                <span id="btnText">Hemen Başlayalım</span>
-                <i data-lucide="sparkles" id="btnIcon" class="w-5 h-5"></i>
-            </button>
-        </form>
-    </div>
-
-    <div id="successMsg" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[200] hidden">
-        <div class="bg-slate-900 text-white px-8 py-4 rounded-2xl shadow-2xl flex items-center gap-4 animate-bounce">
-            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <i data-lucide="check" class="w-5 h-5 text-white"></i>
-            </div>
-            <div>
-                <p class="font-bold text-sm">Mesajınız Alındı!</p>
-                <p class="text-xs text-slate-400">Ekibimiz size dönüş yapacak.</p>
-            </div>
+     <div class="reveal max-w-lg mx-auto mt-12">
+    <div class="bg-white rounded-[2.5rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-slate-100 p-8 md:p-10 relative overflow-hidden">
+        
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Hızlı Teklif Alın</h3>
+            <p class="text-slate-500 text-sm">Projeniz için uzman ekibimizden 24 saat içinde yanıt alın.</p>
         </div>
-    </div>
-</div>
 
+        <form id="contactForm" class="space-y-4">
+            <div>
+                <label class="block text-[12px] font-bold uppercase tracking-wider text-slate-400 mb-2 ml-1">Adınız Soyadınız</label>
+                <div class="relative">
+                    <i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+                    <input type="text" id="userName" placeholder="Örn: Ahmet Yılmaz" required
+                        class="w-full pl-11 pr-4 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 outline-none transition-all text-slate-700">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-[12px] font-bold uppercase tracking-wider text-slate-400 mb-2 ml-1">E-posta Adresiniz</label>
+                <div class="relative">
+                    <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"></i>
+                    <input type="email" id="userEmail" placeholder="ahmet@sirket.com" required
+                        class="w-full pl-11 pr-4 py-4 rounded-2xl bg-slate-50 border-transparent focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/5 outline-none transition-all text-slate-700">
+                </div>
+            </div>
+
+            <div>
     <!-- Stat Counter Section -->
     <section class="py-20 bg-blue-600 text-white">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
