@@ -75,6 +75,424 @@
                                 </div>
                                 <span class="text-slate-900 text-sm font-bold">Başarı Hikayeleri</span>
                             </a>
+                            <a href="#" class="flex items-center gap-4 p-3 hover:bg-purple-50 rounded-2xl transition-all group/item">
+    <div class="w-10 h-10 shrink-0 bg-purple-50 rounded-xl flex items-center justify-center text-white">
+        <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+    </div>
+    <span class="text-slate-900 text-sm font-bold">Case Study</span>
+</a>
+                        <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sempeak Content Hub | Dinamik İçerik Stratejisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #1d4ed8, #60a5fa, #1d4ed8); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 3s linear infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: all 0.3s ease; }
+        .glass-nav.scrolled { padding: 0.5rem 1rem; background: rgba(255, 255, 255, 0.9); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .hero-blob { position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; filter: blur(60px); z-index: -1; animation: float 20s infinite alternate; }
+        @keyframes float { 0% { transform: translate(-10%, -10%) scale(1); } 100% { transform: translate(20%, 20%) scale(1.1); } }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .option-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 2px solid transparent; }
+        .option-card.active { border-color: #3b82f6; background-color: #eff6ff; transform: scale(1.02); }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: slideIn 0.4s ease-out; }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    </style>
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+   <nav class="fixed w-full z-[100] glass-nav border-b border-slate-100 p-4" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            
+          <a href="index.html" class="flex items-center group shrink-0">
+    <div class="flex items-center">
+        <div class="h-9 w-auto flex items-center justify-center bg-blue-600 rounded-lg px-3 text-white font-black text-lg tracking-tighter shadow-lg shadow-blue-200">
+            S
+        </div>
+        <span class="ml-3 font-extrabold text-xl tracking-tighter text-slate-800">Sempeak</span>
+    </div>
+
+    <div class="ml-5 pl-5 border-l-2 border-slate-200 flex flex-col justify-center">
+        <span class="text-blue-600 font-extrabold text-[13px] tracking-[0.15em] leading-tight uppercase">
+            İçerik Departmanı
+        </span>
+        <span class="text-slate-400 text-[9px] font-bold tracking-widest uppercase mt-0.5">
+            Stratejik İçerik Merkezi
+        </span>
+    </div>
+</a>
+            <div class="flex gap-6 md:gap-8 items-center text-[13px] font-bold uppercase tracking-tight text-slate-600">
+                
+                <a href="index.html" class="hover:text-blue-600 transition-colors">Ana Sayfa</a>
+                
+                <div class="relative group">
+                    <button class="flex items-center gap-1.5 hover:text-blue-600 transition-all py-2">
+                        HAKKIMIZDA
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-hover:rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-[280px] pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[110]">
+                        <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 p-3">
+                            <a href="#" class="flex items-center gap-4 p-3 hover:bg-blue-50 rounded-2xl transition-all group/item">
+                                <div class="w-10 h-10 shrink-0 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                                    <i data-lucide="user-check" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-slate-900 text-sm font-bold">İçerik Editörü</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-4 p-3 hover:bg-indigo-50 rounded-2xl transition-all group/item">
+                                <div class="w-10 h-10 shrink-0 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+                                    <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-slate-900 text-sm font-bold">İçerik Yazarı</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-4 p-3 hover:bg-emerald-50 rounded-2xl transition-all group/item">
+                                <div class="w-10 h-10 shrink-0 bg-emerald-50 rounded-xl flex items-center justify-center text-white">
+                                    <i data-lucide="award" class="w-5 h-5"></i>
+                                </div>
+                                <span class="text-slate-900 text-sm font-bold">Başarı Hikayeleri</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button class="flex items-center gap-1.5 hover:text-blue-600 transition-all py-2">
+                        HİZMETLERİMİZ
+                        <i data-lucide="chevron-down" class="w-4 h-4 group-hover:rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 w-[580px] pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[110]">
+                        <div class="bg-white rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.12)] border border-slate-100 p-6">
+                            <div class="grid grid-cols-2 gap-x-6">
+                                <div>
+                                    <h5 class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-3 ml-3">İçerik Üretimi</h5>
+                                    <div class="space-y-1">
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-blue-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="instagram" class="w-4 h-4 text-blue-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Sosyal Medya</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-blue-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="link" class="w-4 h-4 text-blue-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Backlink İçerikleri</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-blue-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="book-open" class="w-4 h-4 text-blue-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Blog İçerikleri</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-blue-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="layout" class="w-4 h-4 text-blue-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Landing Page</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-blue-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="shopping-bag" class="w-4 h-4 text-blue-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Ürün Açıklaması</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="border-l border-slate-50 pl-6">
+                                    <h5 class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-3 ml-3">Analiz & Araçlar</h5>
+                                    <div class="space-y-1">
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-indigo-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="search" class="w-4 h-4 text-indigo-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Anahtar Kelime Araştırması</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-indigo-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="bot" class="w-4 h-4 text-indigo-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">AI Check</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-indigo-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="file-warning" class="w-4 h-4 text-indigo-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">İntihal Sorgulama</span>
+                                        </a>
+                                        <a href="#" class="flex items-center gap-3 p-2.5 hover:bg-indigo-50 rounded-xl transition-all group/item">
+                                            <i data-lucide="hash" class="w-4 h-4 text-indigo-600"></i>
+                                            <span class="text-slate-800 text-xs font-bold">Kelime Sayacı</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 hidden md:block">Teklif Al</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-48 pb-32 px-6">
+        <div class="hero-blob top-0 left-0"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="reveal text-5xl md:text-7xl font-extrabold mb-8 leading-[1.1] tracking-tighter">
+                İçerik İhtiyacınızı <br> <span class="gradient-text">Hızla</span> Çözün.
+            </h1>
+            <p class="reveal text-slate-500 max-w-2xl mx-auto mb-12 text-lg">
+                Markanız için profesyonel içerik üretimi ve editörlük desteği. Saniyeler içinde talebinizi oluşturun.
+            </p>
+
+            <div class="reveal max-w-4xl mx-auto bg-white rounded-[3rem] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border border-slate-100 p-8 md:p-12 relative">
+                <div class="flex justify-center gap-2 mb-10">
+                    <div id="dot1" class="h-2 w-12 rounded-full bg-blue-600 transition-all"></div>
+                    <div id="dot2" class="h-2 w-12 rounded-full bg-slate-100 transition-all"></div>
+                    <div id="dot3" class="h-2 w-12 rounded-full bg-slate-100 transition-all"></div>
+                </div>
+
+                <div id="formSteps">
+                    <div id="step1" class="form-step active">
+                        <h3 class="text-xl font-extrabold mb-6">Ne tür bir içerik istiyorsunuz?</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                            <div onclick="selectType(this, 'Blog')" class="option-card p-6 bg-slate-50 rounded-3xl text-center">
+                                <div class="text-3xl mb-3">📝</div>
+                                <div class="font-bold text-sm">Blog</div>
+                            </div>
+                            <div onclick="selectType(this, 'Ürün')" class="option-card p-6 bg-slate-50 rounded-3xl text-center">
+                                <div class="text-3xl mb-3">🛍️</div>
+                                <div class="font-bold text-sm">Ürün</div>
+                            </div>
+                            <div onclick="selectType(this, 'Kategori')" class="option-card p-6 bg-slate-50 rounded-3xl text-center">
+                                <div class="text-3xl mb-3">📂</div>
+                                <div class="font-bold text-sm">Kategori</div>
+                            </div>
+                            <div onclick="selectType(this, 'Sosyal Medya')" class="option-card p-6 bg-slate-50 rounded-3xl text-center">
+                                <div class="text-3xl mb-3">📱</div>
+                                <div class="font-bold text-sm">Sosyal Medya</div>
+                            </div>
+                        </div>
+                        <button onclick="changeStep(2)" class="w-full py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all flex items-center justify-center gap-2 group">
+                            Devam Et <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <div id="step2" class="form-step">
+                        <h3 class="text-xl font-extrabold mb-6">Hangi destek tipine ihtiyacınız var?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div onclick="selectService(this, 'İçerik Yazarlığı')" class="option-card p-8 bg-slate-50 rounded-3xl flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-2xl">✒️</div>
+                                <div>
+                                    <div class="font-bold">İçerik Yazarlığı</div>
+                                    <div class="text-xs text-slate-400">Sıfırdan yaratıcı üretim</div>
+                                </div>
+                            </div>
+                            <div onclick="selectService(this, 'İçerik Editörlüğü')" class="option-card p-8 bg-slate-50 rounded-3xl flex items-center gap-4 text-left">
+                                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm text-2xl">🔍</div>
+                                <div>
+                                    <div class="font-bold">İçerik Editörlüğü</div>
+                                    <div class="text-xs text-slate-400">Kontrol ve optimizasyon</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <button onclick="changeStep(1)" class="flex-1 py-5 border-2 border-slate-100 text-slate-500 font-bold rounded-2xl hover:bg-slate-50 transition-all">Geri</button>
+                            <button onclick="changeStep(3)" class="flex-[2] py-5 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all">Son Adıma Geç</button>
+                        </div>
+                    </div>
+
+                    <div id="step3" class="form-step">
+                        <h3 class="text-xl font-extrabold mb-6">Son olarak, size nasıl ulaşalım?</h3>
+                        <div class="space-y-4 mb-8">
+                            <div class="relative">
+                                <i data-lucide="mail" class="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300"></i>
+                                <input type="email" id="emailInput" placeholder="Mail adresinizi giriniz" class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white rounded-2xl outline-none transition-all font-medium text-left">
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <button onclick="changeStep(2)" class="flex-1 py-5 border-2 border-slate-100 text-slate-500 font-bold rounded-2xl hover:bg-slate-50 transition-all">Geri</button>
+                            <button onclick="finalSubmit()" id="submitBtn" class="flex-[2] py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all flex items-center justify-center gap-2">
+                                <span>Talebi Gönder</span> <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="success" class="form-step py-10">
+                        <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="check" class="w-10 h-10"></i>
+                        </div>
+                        <h2 class="text-2xl font-black mb-2">Tebrikler!</h2>
+                        <p class="text-slate-500 mb-8">Talebiniz başarıyla kaydedildi.</p>
+                        <button onclick="resetAll()" class="px-8 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl">Başa Dön</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-blue-600 text-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div>
+                <div class="text-4xl font-black mb-2 counter" data-target="500">0</div>
+                <div class="text-blue-100 text-[10px] uppercase font-bold tracking-widest">Aylık İçerik</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2 counter" data-target="20">0</div>
+                <div class="text-blue-100 text-[10px] uppercase font-bold tracking-widest">Aktif Yazar</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2 counter" data-target="98">0</div>
+                <div class="text-blue-100 text-[10px] uppercase font-bold tracking-widest">Memnuniyet</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2 counter" data-target="5">0</div>
+                <div class="text-blue-100 text-[10px] uppercase font-bold tracking-widest">Ülke Odaklı</div>
+            </div>
+        </div>
+    </section>
+<footer class="bg-slate-900 text-white pt-20 pb-10 px-6 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                
+                <div class="col-span-1 md:col-span-1">
+                    <img src="https://www.sempeak.com/uploads/settings/logos/logo-sempeak.png" alt="Sempeak" class="h-8 brightness-0 invert mb-6">
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Yapay zeka destekli, SEO odaklı ve stratejik içerik çözümleriyle markanızı geleceğe taşıyoruz.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i data-lucide="instagram" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i data-lucide="linkedin" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i data-lucide="twitter" class="w-5 h-5 text-slate-400 group-hover:text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Departmanımız</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-blue-500"></i> İçerik Yazarları</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-blue-500"></i> Editör Masası</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-blue-500"></i> Başarı Hikayeleri</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3 text-blue-500"></i> Kariyer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Hızlı Araçlar</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#" class="hover:text-white transition-colors">AI Content Check</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kelime Sayacı</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO Analiz</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">İntihal Sorgulama</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Trendleri Yakalayın</h4>
+                    <p class="text-slate-400 text-xs mb-4">Haftalık içerik stratejileri ve SEO trendleri mailinizde.</p>
+                    <div class="relative">
+                        <input type="email" placeholder="E-posta adresi" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500 transition-all">
+                        <button class="absolute right-2 top-1.5 bg-blue-600 p-1.5 rounded-lg hover:bg-blue-500 transition-all">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:row justify-between items-center gap-4 text-slate-500 text-[11px] font-bold tracking-widest uppercase">
+                <div>© 2024 SEMPEAK CONTENT HUB. TÜM HAKLARI SAKLIDIR.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Kullanım Koşulları</a>
+                    <a href="#" class="hover:text-white transition-colors">Gizlilik Politikası</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        lucide.createIcons();
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Form Logic
+        let formData = { type: '', service: '', email: '' };
+
+        function selectType(el, val) {
+            document.querySelectorAll('#step1 .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            formData.type = val;
+        }
+
+        function selectService(el, val) {
+            document.querySelectorAll('#step2 .option-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            formData.service = val;
+        }
+
+        function changeStep(step) {
+            if (step === 2 && !formData.type) return alert("Tür seçin!");
+            if (step === 3 && !formData.service) return alert("Hizmet seçin!");
+
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            for(let i=1; i<=3; i++) {
+                const dot = document.getElementById(`dot${i}`);
+                if(i <= step) dot.className = "h-2 w-12 rounded-full bg-blue-600 transition-all";
+                else dot.className = "h-2 w-12 rounded-full bg-slate-100 transition-all";
+            }
+        }
+
+        function finalSubmit() {
+            const email = document.getElementById('emailInput').value;
+            if(!email.includes('@')) return alert("E-posta geçersiz!");
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('success').classList.add('active');
+        }
+
+        function resetAll() { location.reload(); }
+
+        // Counter Logic
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const update = () => {
+                    const speed = target / 50;
+                    if (count < target) {
+                        count += speed;
+                        counter.innerText = Math.ceil(count) + (target === 98 && count >= 98 ? '%' : '+');
+                        setTimeout(update, 30);
+                    } else {
+                        counter.innerText = target + (target === 98 ? '%' : '+');
+                    }
+                };
+                update();
+            });
+        }
+
+        // Reveal Logic
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active");
+            });
+            const stats = document.querySelector('.counter');
+            if(stats && stats.getBoundingClientRect().top < window.innerHeight && !window.started) {
+                startCounters();
+                window.started = true;
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal;
+    </script>
+</body>
+</html>
+
                         </div>
                     </div>
                 </div>
