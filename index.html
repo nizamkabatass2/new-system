@@ -48,6 +48,19 @@
         .case-card:hover img {
             transform: scale(1.05);
         }
+        
+        /* Dropdown Styles */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .dropdown-group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="hero-bg">
@@ -64,8 +77,30 @@
                     <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest leading-none">İçerik Stüdyosu</span>
                 </div>
             </a>
+            
             <div class="hidden md:flex items-center gap-10 text-[13px] font-bold uppercase tracking-wide text-slate-500">
-                <a href="#hizmetler" class="hover:text-blue-600 transition-colors">Uzmanlıklar</a>
+                <!-- Dropdown Start -->
+                <div class="relative dropdown-group py-8">
+                    <button class="flex items-center gap-1 hover:text-blue-600 transition-colors uppercase">
+                        Uzmanlıklar <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-56 bg-white border border-slate-100 shadow-2xl shadow-slate-200/50 rounded-2xl py-3 dropdown-menu">
+                        <a href="#" class="flex items-center gap-3 px-5 py-3 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                            <i data-lucide="user-check" class="w-4 h-4"></i>
+                            <span>İçerik Editörü</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-5 py-3 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all border-y border-slate-50">
+                            <i data-lucide="pen-tool" class="w-4 h-4"></i>
+                            <span>İçerik Yazarı</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-5 py-3 text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                            <i data-lucide="users" class="w-4 h-4"></i>
+                            <span>Ekiplerimiz</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Dropdown End -->
+
                 <a href="#surec" class="hover:text-blue-600 transition-colors">Nasıl Çalışırız?</a>
                 <a href="#case-studies" class="hover:text-blue-600 transition-colors">Vakalar</a>
                 <a href="#iletisim" class="px-7 py-3 bg-blue-600 text-white rounded-full btn-glow transition-all">Teklif Al</a>
